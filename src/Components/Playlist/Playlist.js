@@ -15,7 +15,7 @@ class Playlist extends React.Component {
 
     handleSavePlaylist() {
         this.props.onSave(); 
-        document.getElementById("playlistName").value = "New Playlist"; 
+        document.getElementById("playlistName").value = "New Routine"; 
     }
 
 
@@ -24,7 +24,7 @@ class Playlist extends React.Component {
             <div className="Playlist">
                 <input defaultValue={this.props.playlistName} onChange={this.handleNameChange} id="playlistName"/>
                 <TrackList tracks={this.props.playlistTracks} onRemove={this.props.onRemove} isRemoval={true}/>
-                <button className="Playlist-save" onClick={this.handleSavePlaylist}>SAVE TO SPOTIFY</button>
+                <button className="Playlist-save" onClick={this.handleSavePlaylist}>SAVE ROUTINE</button>
             </div>
         )
     }

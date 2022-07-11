@@ -3,7 +3,7 @@ const TestData = {
         let result = []; 
         let box; 
 
-        if(true) {
+        if(/test/i.test(term)) {
             box = {
                 id: 0,
                 name: "Test", 
