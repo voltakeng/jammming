@@ -1,5 +1,5 @@
 const CLIENT_ID = '048d73a35be043b582b31e0c33d8b29e';
-const REDIRECT_URI = 'https://lambent-hamster-e6f8a4.netlify.app'
+const REDIRECT_URI = 'https://lambent-hamster-e6f8a4.netlify.app/'
 let accessToken; 
 
 const Spotify = {
