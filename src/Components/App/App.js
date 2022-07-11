@@ -20,7 +20,7 @@ class App extends React.Component {
 
     this.state = {
       searchResults: [],
-      playlistName: "New Routine",
+      playlistName: "New Set of Routine",
       playlistTracks: []
     }
   }
@@ -56,7 +56,7 @@ class App extends React.Component {
     // })
 
     this.setState({
-      playlistName: "New Routine",
+      playlistName: "New Set of Routine",
       playlistTracks: []
     })
   }

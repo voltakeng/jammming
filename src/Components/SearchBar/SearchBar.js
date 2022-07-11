@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
     render() { 
         return (
             <div className="SearchBar">
-                <input placeholder="Enter a/an Activity" onChange={this.handleTermChange}/> 
+                <input placeholder="Example: routine 20 mins" onChange={this.handleTermChange}/> 
                 <button className="SearchButton">SEARCH (NOT USE)</button> 
             </div>
         );

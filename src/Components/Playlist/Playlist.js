@@ -15,7 +15,7 @@ class Playlist extends React.Component {
 
     handleSavePlaylist() {
         this.props.onSave(); 
-        document.getElementById("playlistName").value = "New Routine"; 
+        document.getElementById("playlistName").value = "New Set of Routine"; 
     }
 
 
