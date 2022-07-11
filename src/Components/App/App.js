@@ -5,7 +5,8 @@ import SearchBar from '../SearchBar/SearchBar';
 import SearchResult from '../SearchResult/SearchResult';
 import Playlist from '../Playlist/Playlist';
 
-import Spotify from '../../utill/Spotify';
+// import Spotify from '../../utill/Spotify';
+import TestData from '../../utill/TestData';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class App extends React.Component {
 
     this.state = {
       searchResults: [],
-      playlistName: "",
+      playlistName: "New Playlist",
       playlistTracks: []
     }
   }
@@ -46,19 +47,26 @@ class App extends React.Component {
   }
 
   savePlaylist() {
-    const trackUris = this.state.playlistTracks.map(track => track.uri);
-    Spotify.savePlayList(this.state.playlistName, trackUris).then(() => {
-      this.setState({
-        playlistName: "New Playlist", 
-        playlistTracks: []
-      })
+    //const trackUris = this.state.playlistTracks.map(track => track.uri);
+    // Spotify.savePlayList(this.state.playlistName, trackUris).then(() => {
+    //   this.setState({
+    //     playlistName: "New Playlist", 
+    //     playlistTracks: []
+    //   })
+    // })
+
+    this.setState({
+      playlistName: "New Playlist",
+      playlistTracks: []
     })
   }
 
   search(term) {
-    Spotify.search(term).then(searchResults => {
-      this.setState({searchResults: searchResults})
-    })
+    // Spotify.search(term).then(searchResults => {
+    //   this.setState({searchResults: searchResults})
+    // })
+
+    this.setState({searchResults: TestData.search(term)})
   }
 
   render() {
