@@ -65,13 +65,11 @@ class App extends React.Component {
     // Spotify.search(term).then(searchResults => {
     //   this.setState({searchResults: searchResults})
     // })
-
-    if(TestData.search(term) === []){
-      alert("Not found, Try again, Ex. rou 20");
+    if(TestData.search(term).length === 0){
+      alert("Not Found, Ex. rou 20");
     } else {
-      this.setState({searchResults: TestData.search(term)})
+      this.setState({searchResults: TestData.search(term)});
     }
-
   }
 
   render() {
