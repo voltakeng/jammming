@@ -66,7 +66,12 @@ class App extends React.Component {
     //   this.setState({searchResults: searchResults})
     // })
 
-    this.setState({searchResults: TestData.search(term)})
+    if(TestData.search(term) === []){
+      alert("Not found, Try again, Ex. rou 20");
+    } else {
+      this.setState({searchResults: TestData.search(term)})
+    }
+
   }
 
   render() {
