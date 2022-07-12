@@ -16,6 +16,15 @@
     text-align: center;
     font-size: 1rem;
   }
+
+  #mins {
+    width: 87px;
+    margin-left: 10px;
+  }
+
+  #mins::-webkit-inner-spin-button {
+    height: 54px;
+  }
   
   .SearchBar input:focus {
     outline: none;

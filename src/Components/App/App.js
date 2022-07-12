@@ -20,16 +20,18 @@ class App extends React.Component {
 
     this.state = {
       searchResults: [],
-      playlistName: "New Set of Routine",
+      playlistName: "Enter Name of Routine",
       playlistTracks: []
     }
+
+    this.runID = 0; 
   }
 
   addTrack(track) {
     let tracks = this.state.playlistTracks; 
-    if(tracks.find(savedTrack => savedTrack.id === track.id)){
-      return; 
-    } 
+
+    this.runID++; 
+    track.id = this.runID; 
 
     tracks.push(track); 
     this.setState({playlistTracks: tracks})
@@ -56,7 +58,7 @@ class App extends React.Component {
     // })
 
     this.setState({
-      playlistName: "New Set of Routine",
+      playlistName: "Enter Name of Routine",
       playlistTracks: []
     })
   }
@@ -65,11 +67,7 @@ class App extends React.Component {
     // Spotify.search(term).then(searchResults => {
     //   this.setState({searchResults: searchResults})
     // })
-    if(TestData.search(term).length === 0){
-      alert("ยังไม่มีคำค้นหานี้ในระบบ, ลองพิมพ์ว่า: rou 20");
-    } else {
-      this.setState({searchResults: TestData.search(term)});
-    }
+    this.setState({searchResults: TestData.search(term)});
   }
 
   render() {
@@ -77,7 +75,7 @@ class App extends React.Component {
       <div>
         <h1><span className="highlight">AUTO</span> BUJO</h1>
         <div className='App'>
-          <SearchBar onSearch={this.search}/>
+          <SearchBar onSearch={this.search} onCreate={this.addTrack}/>
           <div className='App-playlist'>
             <SearchResult searchResults={this.state.searchResults} onAdd={this.addTrack}/>
             <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks} onRemove={this.removeTrack} onNameChange={this.updatePlaylistName} onSave={this.savePlaylist}/>
