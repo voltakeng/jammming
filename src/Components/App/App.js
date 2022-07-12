@@ -66,7 +66,7 @@ class App extends React.Component {
     //   this.setState({searchResults: searchResults})
     // })
     if(TestData.search(term).length === 0){
-      alert("Not Found, Ex. rou 20");
+      alert("ยังไม่มีคำค้นหานี้ในระบบ, ลองพิมพ์ว่า: rou 20");
     } else {
       this.setState({searchResults: TestData.search(term)});
     }
